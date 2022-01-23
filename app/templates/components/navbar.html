@@ -1,0 +1,31 @@
+{% macro navbar() -%}
+<nav class="navbar fixed-top navbar-light navbar-expand-md bg-faded justify-content-center">
+    <div class="container">
+      <a href="/" class="navbar-brand d-flex w-50 me-auto"><h3 id="nav-name">N. Anthony</h3></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+
+            <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/anthonychukwuemeka-nwachukwu/" target="_blank">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portfolio">PORTFOLIO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact">Contact ME</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{{ url_for('static', filename='resume.pdf') }}" class="nav-link" target="_blank">RESUME</a>
+              </li>
+<!--                <li><a href="HarrisonJansmaResume.pdf" class="genric-btn primary-border circle" target="_blank">Resume</a></li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+{%- endmacro %}

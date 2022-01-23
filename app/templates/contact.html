@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+    <!-- Wrapper container -->
+<section class="contactform-area section-gap">
+<div class="container contact-div">
+
+  <!-- Bootstrap 5 starter form -->
+  <form id="contactForm" method="post" name="myemailform" action="send_email">
+
+    <!-- Name input -->
+    <div class="mb-3">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-control" id="name" type="text" placeholder="Name" name="name"/>
+    </div>
+
+    <!-- Email address input -->
+    <div class="mb-3">
+      <label class="form-label" for="emailAddress">Email Address</label>
+      <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" name="email"/>
+    </div>
+
+    <!-- Message input -->
+    <div class="mb-3">
+      <label class="form-label" for="message">Message</label>
+      <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" name="message"></textarea>
+    </div>
+
+    <!-- Form submit button -->
+    <div class="d-grid">
+      <button class="btn btn-primary btn-sm" type="submit">Submit</button>
+    </div>
+
+  </form>
+
+</div>
+</section>
+
+
+{% endblock %}

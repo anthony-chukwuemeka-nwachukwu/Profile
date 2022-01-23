@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+    <section class="banner-area">
+        <div class="container desc">
+            <div class="row fullscreen align-items-center justify-content-between">
+                <div class="col-lg-6 col-md-6 col-xs-6 banner-left">
+                    <h5>I am</h5>
+
+                    <h2 id="full-name" class="mt-10 mb-20">Nwachukwu Anthony</h2>
+                    <p>
+                        Machine Learning Engineer and Data Analyst. Inspired by challenging tasks.
+                    </p>
+<!--							<a href="archive" class="primary-btn text-uppercase mb-20">My Projects</a>-->
+                    <a href="portfolio" type="button" class="primary-btn text-uppercase mb-20">My Projects</a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 banner-right align-self-center">
+                    <img src="{{ url_for('static', filename='img/tony.png') }}" style="width:auto;height:auto;max-width:100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Start home-about Area -->
+    <section class="home-about-area section-gap">
+        <div class="container">
+            <div class="row align-items-center justify-content-between personal-details">
+                    <h2 class="text-uppercase">Personal Details</h2>
+                    <br>
+                    <br>
+
+                    <blockquote class="generic-blockquote">
+                        <p class="fz-16">
+
+                             A few interesting things about me. I love to read science fiction (my favorite is Frank Herbert's Dune). I am also an avid gamer. I love to play competitive strategy games and first-person shooters. Lastly, I love learning. Every day I push myself to learn something new, whether that be about machine learning, software engineering, or miscellaneous facts about the universe.
+                        </p>
+                        <p class="fz-16">
+                             On top of recently getting married and graduating with a masters in computer science from UT Dallas, I also recently started working as a senior data scientist at Capital One. My work mainly revolves around utilizing natural language processing to build a more intelligent customer experience.
+                        </p>
+                        <a href="https://www.linkedin.com/in/anthonychukwuemeka-nwachukwu/" type="button" class="primary-btn text-uppercase" target="_blank">About me</a>
+                    </blockquote>
+            </div>
+        </div>
+    </section>
+    <!-- End home-about Area -->
+
+	<hr>
+
+	<!-- Start services Area -->
+	<section class="services-area section-gap">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content  col-lg-7">
+					<div class="title text-center">
+						<h1 class="mb-10">Areas of Interest</h1>
+						<p> Take a look at some of the things I love working on.
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				{% for c,t,b in interests %}
+				<div class="col-lg-4 col-md-6">
+					<div class="single-services">
+						<span class="{{ c }}"></span>
+						<a><h4>{{ t }}</h4></a>
+						<p>{{ b }}</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+	<!-- End services Area -->
+
+	<hr>
+
+	<!-- Start home about Area -->
+	<section class="home-about-area section-gap">
+
+		<div class="text-center">
+				<div class="menu-content">
+						<div class="title text-center">
+								<h1 class="mb-10">Skills Expertisse</h1>
+								  1 - Basic <span style="display: inline-block; width: 2ch;">&#9;</span>
+									 2 - Novice <span style="display: inline-block; width: 2ch;">&#9;</span>
+									 3 - Intermediate<span style="display: inline-block; width: 2ch;">&#9;</span>
+									  <p>4 - Advanced<span style="display: inline-block; width: 2ch;">&#9;</span>
+										 5 - Expert<p/>
+						</div>
+				</div>
+		</div>
+
+		<div class="container">
+			<div class="row skillbar-wraps">
+				{% for group, skillrates in skillgroups %}
+					<div class="col-lg-4 skill-left">
+						<h4 class="text-center pt-50"> {{group}} </h4>
+						{% for skill,rate in skillrates %}
+							<div class="single-skill">
+								<p>
+									{{ skill }}
+								</p>
+								<div class="skill sb_progress">
+<!--									style="position: absolute; width: 80%; height: 100%; background-color: rgb(51, 122, 183);-->
+								  <div class="sb_bar" role="progressbar" style="{{rate}} background-color: #733332;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</section>
+	<!-- End home about Area -->
+
+	<hr>
+
+	<!-- Start recent-blog Area -->
+	<section class="recent-blog-area section-gap">
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8 pb-30 header-text">
+					<h1>My Latest Projects</h1>
+					<p>
+						Take a look at my recent work.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+
+				{% for link, img, date, title, p in latestprojects %}
+					<div class="single-recent-blog col-lg-4 col-md-4">
+						<div class="thumb">
+							<a href="{{link}}" target="_blank">
+							<img class="f-img img-fluid" src="{{img}}" alt="">
+						</a>
+						</div>
+						<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+
+							<div class="meta">
+								{{date}}
+							</div>
+						</div>
+						<a href="{{link}}" target="_blank">
+							<h4>{{title}} </h4>
+						</a>
+						<p>{{p}}</p>
+					</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</section>
+	<!-- end recent-blog Area -->
+
+	<hr>
+
+	<!-- Start price Area -->
+	<section class="price-area section-gap">
+
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-20 col-md-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Other Platforms</h1>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				{% for name,link,img,desc in platforms %}
+				<div class="col-lg-6 col-md-6 single-price">
+					<a href="{{link}}" target="_blank">
+						<div class="top-part">
+							<img src="{{img}}" height=300 width=300>
+							<h4>{{name}}</h4>
+							<p class="mt-10">{{desc}}</p>
+						</div>
+					</a>
+
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</section>
+	<!-- End Start price Area -->
+
+{% endblock %}
