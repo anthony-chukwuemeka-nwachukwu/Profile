@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
 
@@ -8,7 +8,7 @@
 <div class="container contact-div">
 
   <!-- Bootstrap 5 starter form -->
-  <form id="contactForm" method="post" name="myemailform" action="send_email">
+  <form id="contactForm" method="post" name="contactform" action="{{ url_for('contact_form') }}">
 
     <!-- Name input -->
     <div class="mb-3">
@@ -18,8 +18,8 @@
 
     <!-- Email address input -->
     <div class="mb-3">
-      <label class="form-label" for="emailAddress">Email Address</label>
-      <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" name="email"/>
+      <label class="form-label" for="email">Email Address</label>
+      <input class="form-control" id="email" type="email" placeholder="Email Address" name="email"/>
     </div>
 
     <!-- Message input -->
