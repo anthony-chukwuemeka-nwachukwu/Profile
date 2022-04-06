@@ -1,7 +1,7 @@
 clas = ["fas fa-cloud", "fas fa-comment", "fas fa-graduation-cap", "fas fa-layer-group", "fas fa-laptop-code",
         "fas fa-chart-bar"]
-tit = ["Cloud Compute", "NLP", "Machine Learning", "Parallel Computing", "Collaboration", "Data Analytics"]
-par = ["I utilize AWS to develop and productionize machine learning systems.",
+tit = ["Python Development", "NLP", "Machine Learning", "Parallel Computing", "Collaboration", "Data Analytics"]
+par = ["I develop python application with Flask.",
        "I apply text analytics to some of the hardest questions in business.",
        "I am passionate about learning the theory that is pushing the cutting edge of ML.",
        "HIVE, Hadoop, and Spark, Oh my!",
